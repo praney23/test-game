@@ -550,7 +550,7 @@ function update(dt) {
 
   // Heading via bicycle model
   if (Math.abs(car.speed) > 0.05) {
-    car.heading += (car.speed/car.wheelbase)*Math.tan(effSteer)*dt;
+    car.heading -= (car.speed/car.wheelbase)*Math.tan(effSteer)*dt;
   }
 
   // Move
@@ -563,7 +563,7 @@ function update(dt) {
 
   // Wheels
   car.spin += car.speed*dt*2.4;
-  spinGrps.forEach(sg => { sg.rotation.y = car.spin; });
+  spinGrps.forEach(sg => { sg.rotation.x = car.spin; });
   steerGrps.forEach(sg => { sg.rotation.y = car.steer; });
 
   // Lap detection
