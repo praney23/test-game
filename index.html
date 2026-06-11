@@ -745,8 +745,6 @@ function update(dt){
     camera.position.z+=(Math.random()-.5)*camShake*0.6;
     camShake*=0.80;
   }
-  // Subtle camera lean into corners
-  camera.rotation.z=-car.steer*spdR*0.06;
 }
 
 // ── Animate ────────────────────────────────────────────────────────────────────
